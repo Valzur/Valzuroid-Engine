@@ -4,7 +4,7 @@
 
 namespace Valzuroid
 {
-	class VALZUROID_API Application
+	class VZ_API Application
 	{
 	public:
 		Application();

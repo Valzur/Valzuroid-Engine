@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Valzuroid">
+      <UniqueIdentifier>{A5C48837-112F-3DAE-5A6D-EE53C6161B03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Valzuroid\Events">
+      <UniqueIdentifier>{E92468E7-D51D-8739-FE4F-6CBEEAA76645}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Valzuroid.h" />
+    <ClInclude Include="src\Valzuroid\Application.h">
+      <Filter>Valzuroid</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Valzuroid\Core.h">
+      <Filter>Valzuroid</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Valzuroid\EntryPoint.h">
+      <Filter>Valzuroid</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Valzuroid\Events\Event.h">
+      <Filter>Valzuroid\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Valzuroid\Events\KeyEvent.h">
+      <Filter>Valzuroid\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Valzuroid\Log.h">
+      <Filter>Valzuroid</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vzpch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Valzuroid\Application.cpp">
+      <Filter>Valzuroid</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Valzuroid\Log.cpp">
+      <Filter>Valzuroid</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vzpch.cpp" />
+  </ItemGroup>
+</Project>

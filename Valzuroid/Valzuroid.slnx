@@ -1,7 +1,0 @@
-<Solution>
-  <Configurations>
-    <Platform Name="x64" />
-  </Configurations>
-  <Project Path="Sandbox/Sandbox.vcxproj" Id="0b602cfb-3f56-417d-bca4-7a70936d011b" />
-  <Project Path="Valzuroid/Valzuroid.vcxproj" Id="5d85b67e-4d35-4f7a-ab32-d64760487288" />
-</Solution>

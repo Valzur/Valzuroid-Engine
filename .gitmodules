@@ -1,0 +1,6 @@
+[submodule "Valzuroid/vendor/spdlog"]
+	path = Valzuroid/vendor/spdlog
+	url = https://github.com/gabime/spdlog
+[submodule "Valzuroid/Valzuroid/vendor/spdlog"]
+	path = Valzuroid/Valzuroid/vendor/spdlog
+	url = https://github.com/gabime/spdlog
