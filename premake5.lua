@@ -13,8 +13,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder (solutiondirectory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "Valzuroid/vendor/GLFW/include"
+IncludeDir["Glad"] = "Valzuroid/vendor/Glad/include"
 
 include "Valzuroid/vendor/GLFW"
+include "Valzuroid/vendor/Glad"
 
 project "Valzuroid"
 	location "Valzuroid"
@@ -37,12 +39,14 @@ project "Valzuroid"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -54,7 +58,8 @@ project "Valzuroid"
 		defines
 		{
 			"VZ_PLATFORM_WINDOWS",
-			"VZ_BUILD_DLL"
+			"VZ_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
