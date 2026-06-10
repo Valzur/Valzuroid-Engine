@@ -6,8 +6,12 @@ namespace Valzuroid
 {
 #define BIND_EVENT_FN(x) std::bind(&x, this, std::placeholders::_1)
 
+	Application* Application::s_Instance = nullptr;
+
 	Application::Application()
 	{
+		VZ_CORE_ASSERT(!s_Instance, "Application already exists!");
+		s_Instance = this;
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
 	}
@@ -47,11 +51,13 @@ namespace Valzuroid
 	void Application::PushLayer(Layer* layer)
 	{
 		m_Layers.emplace(m_Layers.begin(), layer);
+		layer->OnActivate();
 	}
 
 	void Application::PushLayerToBack(Layer* layer)
 	{
 		m_Layers.emplace_back(layer);
+		layer->OnActivate();
 	}
 
 	void Application::PopLayer(Layer* layer)
@@ -59,6 +65,8 @@ namespace Valzuroid
 		auto pos = std::find(m_Layers.begin(), m_Layers.end(), layer);
 		if (pos != m_Layers.end())
 			m_Layers.erase(pos);
+
+		layer->OnDeactivate();
 	}
 
 	bool Application::OnWindowClose(WindowCloseEvent& e)

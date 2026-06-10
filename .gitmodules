@@ -7,3 +7,6 @@
 [submodule "Valzuroid/vendor/GLFW"]
 	path = Valzuroid/vendor/GLFW
 	url = https://github.com/Valzur/glfw.git
+[submodule "Valzuroid/vendor/imgui"]
+	path = Valzuroid/vendor/imgui
+	url = https://github.com/Valzur/imgui.git

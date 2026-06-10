@@ -21,6 +21,10 @@ namespace Valzuroid
 		void PushLayer(Layer* layer);
 		void PushLayerToBack(Layer* layer);
 		void PopLayer(Layer* layer);
+
+		static inline Application& Get() { return *s_Instance; }
+		inline Window& GetWindow() { return *m_Window; }
+
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 
@@ -28,6 +32,9 @@ namespace Valzuroid
 		bool m_Running = true;
 
 		std::vector<Layer*> m_Layers;
+
+	private:
+		static Application* s_Instance;
 	};
 
 	// To be defined by the client

@@ -24,6 +24,7 @@ public:
 	Sandbox()
 	{
 		PushLayer(new TestLayer());
+		PushLayerToBack(new Valzuroid::ImGuiLayer());
 	}
 
 	~Sandbox()
