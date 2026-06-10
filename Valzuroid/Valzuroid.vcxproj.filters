@@ -40,6 +40,9 @@
     <ClInclude Include="src\Valzuroid\Events\MouseEvent.h">
       <Filter>Valzuroid\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Valzuroid\Layer.h">
+      <Filter>Valzuroid</Filter>
+    </ClInclude>
     <ClInclude Include="src\Valzuroid\Log.h">
       <Filter>Valzuroid</Filter>
     </ClInclude>
@@ -53,6 +56,9 @@
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\Valzuroid\Application.cpp">
+      <Filter>Valzuroid</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Valzuroid\Layer.cpp">
       <Filter>Valzuroid</Filter>
     </ClCompile>
     <ClCompile Include="src\Valzuroid\Log.cpp">

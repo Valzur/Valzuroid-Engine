@@ -4,6 +4,7 @@
 #include "Events/Event.h"
 #include "Events/ApplicationEvent.h"
 #include "Window.h"
+#include "Layer.h"
 
 namespace Valzuroid
 {
@@ -16,12 +17,17 @@ namespace Valzuroid
 		void Run();
 
 		void OnEvent(Event& e);
+		 
+		void PushLayer(Layer* layer);
+		void PushLayerToBack(Layer* layer);
+		void PopLayer(Layer* layer);
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
 
+		std::vector<Layer*> m_Layers;
 	};
 
 	// To be defined by the client
