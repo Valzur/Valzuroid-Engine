@@ -4,3 +4,6 @@
 [submodule "Valzuroid/Valzuroid/vendor/spdlog"]
 	path = Valzuroid/Valzuroid/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Valzuroid/vendor/GLFW"]
+	path = Valzuroid/vendor/GLFW
+	url = https://github.com/Valzur/glfw.git

@@ -12,12 +12,9 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "Valzuroid/Log.h"
+
 #if VZ_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif
-
-class vzpch
-{
-
-};
 

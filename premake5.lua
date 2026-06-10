@@ -10,6 +10,12 @@ workspace "Valzuroid"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solutiondirectory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "Valzuroid/vendor/GLFW/include"
+
+include "Valzuroid/vendor/GLFW"
+
 project "Valzuroid"
 	location "Valzuroid"
 	kind "SharedLib"
@@ -29,7 +35,15 @@ project "Valzuroid"
 
 	includedirs
 	{
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/src",
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Valzuroid/Core.h"
+#include "vzpch.h"
 
 namespace Valzuroid
 {
@@ -17,7 +17,7 @@ namespace Valzuroid
 	{
 		None = 0,
 		EventCategoryApplication = BIT(0),
-		EventCategoryInput		 = Bit(1),
+		EventCategoryInput		 = BIT(1),
 		EventCategoryKeyboard	 = BIT(2),
 		EventCategoryMouse		 = BIT(3),
 		EventCategoryMouseButton = BIT(4)
@@ -44,7 +44,7 @@ namespace Valzuroid
 		}
 
 	protected:
-		bool m_handled = false;
+		bool m_Handled = false;
 	};
 
 	class EventDispatcher
@@ -60,7 +60,7 @@ namespace Valzuroid
 		template<typename T>
 		bool Dispatch(EventFn<T> func)
 		{
-			m_Event.GetEventType() == T::GetStaticType()
+			if(m_Event.GetEventType() == T::GetStaticType())
 			{
 				m_Event.m_Handled = func(*(T*) & m_Event);
 				return true;
