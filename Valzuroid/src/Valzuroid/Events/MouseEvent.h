@@ -10,6 +10,8 @@ namespace Valzuroid
 		MouseButtonEvent(int button):
 			m_Button(button){}
 
+		inline int GetButton() { return m_Button; }
+
 		EVENT_CLASS_CATEGORY(EventCategoryMouseButton)
 	protected:
 		int m_Button;

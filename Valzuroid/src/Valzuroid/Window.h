@@ -14,8 +14,8 @@ namespace Valzuroid
 		unsigned int Height;
 
 		WindowProps(const std::string& title = "Valzuroid Engine",
-					unsigned int width = 1920,
-					unsigned int height = 1080)
+					unsigned int width = 1600,
+					unsigned int height = 900)
 			: Title(title), Width(width), Height(height)
 		{
 

@@ -45,4 +45,20 @@ namespace Valzuroid
 
 		EVENT_CLASS_TYPE(KeyReleased)
 	};
+
+	class VZ_API KeyTypedEvent : public KeyEvent
+	{
+	public:
+		KeyTypedEvent(int keyCode)
+			: KeyEvent(keyCode){}
+
+		std::string ToString() const override 
+		{
+			std::stringstream ss;
+			ss << "Key Typed Event: " << m_KeyCode;
+			return ss.str();
+		}
+
+		EVENT_CLASS_TYPE(KeyTyped)
+	};
 }
