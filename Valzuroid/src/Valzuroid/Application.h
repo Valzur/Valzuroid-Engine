@@ -6,6 +6,8 @@
 #include "Window.h"
 #include "Layer.h"
 
+#include "Valzuroid/ImGui/ImGuiLayer.h"
+
 namespace Valzuroid
 {
 	class VZ_API Application
@@ -29,6 +31,7 @@ namespace Valzuroid
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 
 		std::vector<Layer*> m_Layers;

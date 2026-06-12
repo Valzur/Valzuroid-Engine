@@ -15,22 +15,15 @@ namespace Valzuroid
 		ImGuiLayer();
 		~ImGuiLayer();
 
-		void OnActivate();
-		void OnUpdate();
-		void OnDeactivate();
+		virtual void OnActivate() override;
+		virtual void OnDeactivate() override;
 
 		void OnEvent(Event& e);
 
+		virtual void Start();
+		virtual void OnImGuiRender() override;
+		virtual void End();
 	private:
-		bool OnMouseButtonPressedEvent(MouseButtonPressedEvent& e);
-		bool OnMouseButtonReleasedEvent(MouseButtonReleasedEvent& e);
-		bool OnMouseScrollEvent(MouseScrollEvent& e);
-		bool OnMouseMovedEvent(MouseMovedEvent& e);
-		bool OnKeyPressedEvent(KeyPressedEvent& e);
-		bool OnKeyReleasedEvent(KeyReleasedEvent& e);
-		bool OnKeyTypedEvent(KeyTypedEvent& e);
-		bool OnWindowResizeEvent(WindowResizeEvent& e);
-		static ImGuiKey KeyToImGuiKey(int keycode);
 
 	private:
 		float m_Time = 0.0f;

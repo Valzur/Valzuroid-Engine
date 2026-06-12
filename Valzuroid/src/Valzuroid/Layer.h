@@ -12,7 +12,8 @@ namespace Valzuroid
 		virtual ~Layer();
 
 		virtual void OnActivate();
-		virtual void OnUpdate() = 0;
+		virtual void OnUpdate();
+		virtual void OnImGuiRender();
 		virtual void OnDeactivate();
 
 		virtual void OnEvent(Event& e) = 0;

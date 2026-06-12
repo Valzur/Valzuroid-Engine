@@ -15,6 +15,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Valzuroid/vendor/GLFW/include"
 IncludeDir["Glad"] = "Valzuroid/vendor/Glad/include"
 IncludeDir["ImGui"] = "Valzuroid/vendor/imgui"
+IncludeDir["glm"] = "Valzuroid/vendor/glm"
 
 include "Valzuroid/vendor/GLFW"
 include "Valzuroid/vendor/Glad"
@@ -34,7 +35,9 @@ project "Valzuroid"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
 
 	includedirs
@@ -43,7 +46,8 @@ project "Valzuroid"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}"
 	}
 
 	links
@@ -103,7 +107,9 @@ project "Sandbox"
 	includedirs
 	{
 		"Valzuroid/vendor/spdlog/include",
-		"Valzuroid/src"
+		"Valzuroid/src",
+		"Valzuroid/vendor",
+		"%{IncludeDir.glm}"
 	}
 
 	links

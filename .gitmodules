@@ -10,3 +10,6 @@
 [submodule "Valzuroid/vendor/imgui"]
 	path = Valzuroid/vendor/imgui
 	url = https://github.com/Valzur/imgui.git
+[submodule "Valzuroid/vendor/glm"]
+	path = Valzuroid/vendor/glm
+	url = https://github.com/g-truc/glm.git

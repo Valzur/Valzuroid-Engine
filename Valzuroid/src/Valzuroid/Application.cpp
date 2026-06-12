@@ -1,5 +1,7 @@
 #include "vzpch.h"
 #include "Application.h"
+#include "Input.h"
+
 #include <Glad/glad.h>
 
 namespace Valzuroid
@@ -12,6 +14,9 @@ namespace Valzuroid
 		s_Instance = this;
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
+
+		m_ImGuiLayer = new ImGuiLayer();
+		PushLayerToBack(m_ImGuiLayer);
 	}
 
 	Application::~Application()
@@ -26,8 +31,17 @@ namespace Valzuroid
 		{
 			glClearColor(0, 0, 1, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
+			
 			for (Layer* layer : m_Layers)
 				layer->OnUpdate();
+
+			m_ImGuiLayer->Start();
+			for (Layer* layer : m_Layers)
+				layer->OnImGuiRender();
+			m_ImGuiLayer->End();
+
+			auto [x, y] = Input::GetMousePosition();
+			VZ_CORE_TRACE("{0}, {1}", x, y);
 
 			m_Window->OnUpdate();
 		}
