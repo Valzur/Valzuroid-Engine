@@ -14,9 +14,12 @@ namespace Valzuroid
 		s_Instance = this;
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
+		m_Renderer = std::unique_ptr<Renderer>(new Renderer());
 
 		m_ImGuiLayer = new ImGuiLayer();
 		PushLayerToBack(m_ImGuiLayer);
+		m_OpenGLFuckery = new OpenGLFuckery();
+		PushLayerToBack(m_OpenGLFuckery);
 	}
 
 	Application::~Application()
@@ -51,7 +54,7 @@ namespace Valzuroid
 	{
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(Application::OnWindowClose));
-		VZ_CORE_INFO("{0}", e.ToString());
+		//VZ_CORE_INFO("{0}", e.ToString());
 		for (auto pos = m_Layers.end(); pos != m_Layers.begin();)
 		{
 			(*--pos)->OnEvent(e);

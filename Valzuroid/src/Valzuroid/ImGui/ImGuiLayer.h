@@ -5,8 +5,6 @@
 #include "Valzuroid/Events/MouseEvent.h"
 #include "Valzuroid/Events/ApplicationEvent.h"
 
-enum ImGuiKey;
-
 namespace Valzuroid
 {
 	class VZ_API ImGuiLayer : public Layer

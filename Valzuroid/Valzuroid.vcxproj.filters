@@ -19,6 +19,12 @@
     <Filter Include="src\Valzuroid\ImGui">
       <UniqueIdentifier>{A688C57E-12EA-A28C-9B57-E93E07B8D94B}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Valzuroid\Layers">
+      <UniqueIdentifier>{BB19B85D-A7A8-4127-50C7-55223C3552CD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Valzuroid\Rendering">
+      <UniqueIdentifier>{C93AC64A-3572-0EE2-3E7C-7205AA3235DB}</UniqueIdentifier>
+    </Filter>
     <Filter Include="vendor">
       <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
     </Filter>
@@ -39,6 +45,9 @@
     </Filter>
     <Filter Include="vendor\glm\glm\gtx">
       <UniqueIdentifier>{B3A6A76B-9F8A-68C1-08EB-6214F4ED5243}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\stb_image">
+      <UniqueIdentifier>{0DA0BA59-F998-D9AB-22CB-BE300E23B9B7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -84,11 +93,35 @@
     <ClInclude Include="src\Valzuroid\Layer.h">
       <Filter>src\Valzuroid</Filter>
     </ClInclude>
+    <ClInclude Include="src\Valzuroid\Layers\OpenGLFuckery.h">
+      <Filter>src\Valzuroid\Layers</Filter>
+    </ClInclude>
     <ClInclude Include="src\Valzuroid\Log.h">
       <Filter>src\Valzuroid</Filter>
     </ClInclude>
     <ClInclude Include="src\Valzuroid\MouseButtonCodes.h">
       <Filter>src\Valzuroid</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Valzuroid\Rendering\IndexBuffer.h">
+      <Filter>src\Valzuroid\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Valzuroid\Rendering\Renderer.h">
+      <Filter>src\Valzuroid\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Valzuroid\Rendering\Shader.h">
+      <Filter>src\Valzuroid\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Valzuroid\Rendering\Texture.h">
+      <Filter>src\Valzuroid\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Valzuroid\Rendering\VertexArray.h">
+      <Filter>src\Valzuroid\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Valzuroid\Rendering\VertexBuffer.h">
+      <Filter>src\Valzuroid\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Valzuroid\Rendering\VertexBufferLayout.h">
+      <Filter>src\Valzuroid\Rendering</Filter>
     </ClInclude>
     <ClInclude Include="src\Valzuroid\Window.h">
       <Filter>src\Valzuroid</Filter>
@@ -1373,11 +1406,38 @@
     <ClCompile Include="src\Valzuroid\Layer.cpp">
       <Filter>src\Valzuroid</Filter>
     </ClCompile>
+    <ClCompile Include="src\Valzuroid\Layers\OpenGLFuckery.cpp">
+      <Filter>src\Valzuroid\Layers</Filter>
+    </ClCompile>
     <ClCompile Include="src\Valzuroid\Log.cpp">
       <Filter>src\Valzuroid</Filter>
     </ClCompile>
+    <ClCompile Include="src\Valzuroid\Rendering\IndexBuffer.cpp">
+      <Filter>src\Valzuroid\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Valzuroid\Rendering\Renderer.cpp">
+      <Filter>src\Valzuroid\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Valzuroid\Rendering\Shader.cpp">
+      <Filter>src\Valzuroid\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Valzuroid\Rendering\Texture.cpp">
+      <Filter>src\Valzuroid\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Valzuroid\Rendering\VertexArray.cpp">
+      <Filter>src\Valzuroid\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Valzuroid\Rendering\VertexBuffer.cpp">
+      <Filter>src\Valzuroid\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Valzuroid\Rendering\VertexBufferLayout.cpp">
+      <Filter>src\Valzuroid\Rendering</Filter>
+    </ClCompile>
     <ClCompile Include="src\vzpch.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\stb_image\stb_image.cpp">
+      <Filter>vendor\stb_image</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

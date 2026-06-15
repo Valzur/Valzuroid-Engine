@@ -5,7 +5,9 @@
 #include "Events/ApplicationEvent.h"
 #include "Window.h"
 #include "Layer.h"
+#include "Valzuroid/Rendering/Renderer.h"
 
+#include "Valzuroid/Layers/OpenGLFuckery.h"
 #include "Valzuroid/ImGui/ImGuiLayer.h"
 
 namespace Valzuroid
@@ -26,12 +28,14 @@ namespace Valzuroid
 
 		static inline Application& Get() { return *s_Instance; }
 		inline Window& GetWindow() { return *m_Window; }
-
+		inline Renderer& GetRenderer() { return *m_Renderer; }
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 
+		std::unique_ptr<Renderer> m_Renderer;
 		std::unique_ptr<Window> m_Window;
 		ImGuiLayer* m_ImGuiLayer;
+		OpenGLFuckery* m_OpenGLFuckery;
 		bool m_Running = true;
 
 		std::vector<Layer*> m_Layers;

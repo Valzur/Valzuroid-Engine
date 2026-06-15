@@ -3,8 +3,12 @@
 
 namespace Valzuroid
 {
-	Layer::Layer(const std::string& name){}
-	Layer::~Layer(){}
+	Layer::Layer(const std::string& name)
+	: m_Name(name){}
+	Layer::~Layer()
+	{
+
+	}
 	void Layer::OnActivate(){}
 	void Layer::OnUpdate(){}
 	void Layer::OnImGuiRender() {}

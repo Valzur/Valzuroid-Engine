@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>vzpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>VZ_PLATFORM_WINDOWS;VZ_BUILD_DLL;GLFW_INCLUDE_NONE;VZ_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -106,7 +106,7 @@
       <PrecompiledHeaderFile>vzpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>VZ_PLATFORM_WINDOWS;VZ_BUILD_DLL;GLFW_INCLUDE_NONE;VZ_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -136,7 +136,7 @@
       <PrecompiledHeaderFile>vzpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>VZ_PLATFORM_WINDOWS;VZ_BUILD_DLL;GLFW_INCLUDE_NONE;VZ_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -175,8 +175,16 @@
     <ClInclude Include="src\Valzuroid\Input.h" />
     <ClInclude Include="src\Valzuroid\KeyCodes.h" />
     <ClInclude Include="src\Valzuroid\Layer.h" />
+    <ClInclude Include="src\Valzuroid\Layers\OpenGLFuckery.h" />
     <ClInclude Include="src\Valzuroid\Log.h" />
     <ClInclude Include="src\Valzuroid\MouseButtonCodes.h" />
+    <ClInclude Include="src\Valzuroid\Rendering\IndexBuffer.h" />
+    <ClInclude Include="src\Valzuroid\Rendering\Renderer.h" />
+    <ClInclude Include="src\Valzuroid\Rendering\Shader.h" />
+    <ClInclude Include="src\Valzuroid\Rendering\Texture.h" />
+    <ClInclude Include="src\Valzuroid\Rendering\VertexArray.h" />
+    <ClInclude Include="src\Valzuroid\Rendering\VertexBuffer.h" />
+    <ClInclude Include="src\Valzuroid\Rendering\VertexBufferLayout.h" />
     <ClInclude Include="src\Valzuroid\Window.h" />
     <ClInclude Include="src\vzpch.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
@@ -606,9 +614,20 @@
     <ClCompile Include="src\Valzuroid\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Valzuroid\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Valzuroid\Layer.cpp" />
+    <ClCompile Include="src\Valzuroid\Layers\OpenGLFuckery.cpp" />
     <ClCompile Include="src\Valzuroid\Log.cpp" />
+    <ClCompile Include="src\Valzuroid\Rendering\IndexBuffer.cpp" />
+    <ClCompile Include="src\Valzuroid\Rendering\Renderer.cpp" />
+    <ClCompile Include="src\Valzuroid\Rendering\Shader.cpp" />
+    <ClCompile Include="src\Valzuroid\Rendering\Texture.cpp" />
+    <ClCompile Include="src\Valzuroid\Rendering\VertexArray.cpp" />
+    <ClCompile Include="src\Valzuroid\Rendering\VertexBuffer.cpp" />
+    <ClCompile Include="src\Valzuroid\Rendering\VertexBufferLayout.cpp" />
     <ClCompile Include="src\vzpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="vendor\stb_image\stb_image.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

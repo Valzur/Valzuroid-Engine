@@ -16,6 +16,7 @@ IncludeDir["GLFW"] = "Valzuroid/vendor/GLFW/include"
 IncludeDir["Glad"] = "Valzuroid/vendor/Glad/include"
 IncludeDir["ImGui"] = "Valzuroid/vendor/imgui"
 IncludeDir["glm"] = "Valzuroid/vendor/glm"
+IncludeDir["stb_image"] = "Valzuroid/vendor/stb_image"
 
 include "Valzuroid/vendor/GLFW"
 include "Valzuroid/vendor/Glad"
@@ -37,7 +38,8 @@ project "Valzuroid"
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
-		"%{prj.name}/vendor/glm/glm/**.inl"
+		"%{prj.name}/vendor/glm/glm/**.inl",
+		"%{prj.name}/vendor/stb_image/stb_image.cpp"
 	}
 
 	includedirs
@@ -47,7 +49,8 @@ project "Valzuroid"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.stb_image}"
 	}
 
 	links
@@ -57,6 +60,9 @@ project "Valzuroid"
 		"ImGui",
 		"opengl32.lib"
 	}
+
+	filter "files:Valzuroid/vendor/stb_image/stb_image.cpp"
+    enablepch "Off"
 
 	filter "system:windows"
 		cppdialect "C++20"
